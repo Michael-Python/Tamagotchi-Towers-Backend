@@ -79,4 +79,8 @@ public abstract class Animal {
     public int getHunger() {
         return hunger;
     }
+
+    public User getUser() {
+        return user;
+    }
 }

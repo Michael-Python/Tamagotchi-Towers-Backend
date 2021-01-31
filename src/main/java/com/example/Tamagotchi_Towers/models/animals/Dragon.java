@@ -26,6 +26,22 @@ public class Dragon extends Animal{
         return animalType;
     }
 
+    public double getAppetite(){
+        return animalType.getAppetite();
+    }
+
+    public double getGrooming(){
+        return animalType.getGrooming();
+    }
+
+    public double getCheeriness(){
+        return animalType.getCheeriness();
+    }
+
+    public double getActivityLevel(){
+        return animalType.getActivityLevel();
+    }
+
     public ArrayList getImages() {
         return images;
     }
