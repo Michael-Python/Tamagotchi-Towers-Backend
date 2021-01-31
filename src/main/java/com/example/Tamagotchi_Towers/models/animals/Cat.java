@@ -1,5 +1,7 @@
 package com.example.Tamagotchi_Towers.models.animals;
 
+import com.example.Tamagotchi_Towers.models.User;
+
 import java.util.ArrayList;
 
 public class Cat extends Animal{
@@ -7,7 +9,9 @@ public class Cat extends Animal{
     private AnimalType animalType;
     private ArrayList images;
 
-    public Cat(){
+    public Cat(String animalName, int health, int happiness, int cleanliness,
+               int fitness, int hunger, User user){
+        super(animalName, health, happiness, cleanliness, fitness, hunger, user);
         this.animalType = AnimalType.CAT;
         this.images = new ArrayList();
     }
