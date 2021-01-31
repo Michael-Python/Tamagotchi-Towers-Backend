@@ -17,6 +17,9 @@ public abstract class Animal {
     @Column(name = "animal_name")
     private String animalName;
 
+    @Column(name = "animal_type")
+    private AnimalType animalType;
+
     @Column(name = "health")
     private int health;
 
@@ -37,9 +40,10 @@ public abstract class Animal {
     @JsonIgnoreProperties({"animals"})
     private User user;
 
-    public Animal(String animalName, int health, int happiness, int cleanliness,
+    public Animal(String animalName, AnimalType animalType, int health, int happiness, int cleanliness,
                   int fitness, int hunger, User user){
         this.animalName = animalName;
+        this.animalType = animalType;
         this.health = health;
         this.happiness = happiness;
         this.cleanliness = cleanliness;
@@ -82,5 +86,25 @@ public abstract class Animal {
 
     public User getUser() {
         return user;
+    }
+
+    public AnimalType getAnimalType() {
+        return animalType;
+    }
+
+    public double getAppetite(){
+        return animalType.getAppetite();
+    }
+
+    public double getGrooming(){
+        return animalType.getGrooming();
+    }
+
+    public double getCheeriness(){
+        return animalType.getCheeriness();
+    }
+
+    public double getActivityLevel(){
+        return animalType.getActivityLevel();
     }
 }
