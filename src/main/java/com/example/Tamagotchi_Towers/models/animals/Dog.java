@@ -18,6 +18,10 @@ public class Dog extends Animal{
         this.images = new ArrayList();
     }
 
+    public Dog(){
+
+    }
+
     public AnimalType getAnimalType() {
         return animalType;
     }

@@ -29,8 +29,8 @@ class TamagotchiTowersApplicationTests {
 	public void checkingUserProperties(){
 		User user = userRepository.getOne(1L);
 		assertEquals("Stuart", user.getUserName());
-		assertEquals("ILovePenguins7", user.getPassword());
-		assertEquals("FakeImgUrl", user.getImageURL());
+		assertEquals("ILikePenguins7", user.getPassword());
+		assertEquals("fakeImgUrl", user.getImageURL());
 		assertEquals(1, user.getAnimals().size());
 	}
 

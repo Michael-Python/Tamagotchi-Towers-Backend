@@ -18,6 +18,10 @@ public class Unicorn extends Animal{
         this.images = new ArrayList();
     }
 
+    public Unicorn(){
+
+    }
+
     public AnimalType getAnimalType() {
         return animalType;
     }

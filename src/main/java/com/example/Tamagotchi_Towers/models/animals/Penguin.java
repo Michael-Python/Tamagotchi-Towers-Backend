@@ -18,6 +18,10 @@ public class Penguin extends Animal{
         this.images = new ArrayList();
     }
 
+    public Penguin(){
+
+    }
+
     public AnimalType getAnimalType() {
         return animalType;
     }
