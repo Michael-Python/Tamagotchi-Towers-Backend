@@ -1,8 +1,7 @@
 package com.example.Tamagotchi_Towers.components;
 
 import com.example.Tamagotchi_Towers.models.User;
-import com.example.Tamagotchi_Towers.models.animals.Animal;
-import com.example.Tamagotchi_Towers.models.animals.Dog;
+import com.example.Tamagotchi_Towers.models.animals.*;
 import com.example.Tamagotchi_Towers.repositories.AnimalRepository;
 import com.example.Tamagotchi_Towers.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +39,24 @@ public class DataLoader implements ApplicationRunner{
         User michael = new User("Michael", "LoveLearning", "fakeImgUrl");
         userRepository.save(michael);
 
-        Dog toto = new Dog()
+        Dog toto = new Dog("Toto", 100, 100,
+                100, 100, 100, michael);
+        animalRepository.save(toto);
+
+        Cat salem = new Cat("Salem", 100, 100,
+                100, 100, 100, ruth);
+        animalRepository.save(salem);
+
+        Penguin pingu = new Penguin("Pingu", 100, 100,
+                100, 100, 100, stuart);
+        animalRepository.save(pingu);
+
+        Dragon smaug = new Dragon("Smaug", 100, 100,
+                100, 100, 100, emily);
+        animalRepository.save(smaug);
+
+        Unicorn charlie = new Unicorn("Charlie", 100, 100,
+                100, 100, 100, andy);
+        animalRepository.save(charlie);
     }
 }
