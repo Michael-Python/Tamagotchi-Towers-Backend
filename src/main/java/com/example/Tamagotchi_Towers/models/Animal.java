@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "animals")
-public class Animal {
+public abstract class Animal {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
