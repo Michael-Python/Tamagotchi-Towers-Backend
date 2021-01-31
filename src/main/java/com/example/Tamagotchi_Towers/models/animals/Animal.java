@@ -1,5 +1,6 @@
-package com.example.Tamagotchi_Towers.models;
+package com.example.Tamagotchi_Towers.models.animals;
 
+import com.example.Tamagotchi_Towers.models.User;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;

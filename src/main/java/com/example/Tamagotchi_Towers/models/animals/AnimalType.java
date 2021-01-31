@@ -1,4 +1,4 @@
-package com.example.Tamagotchi_Towers.models;
+package com.example.Tamagotchi_Towers.models.animals;
 
 public enum AnimalType {
 
