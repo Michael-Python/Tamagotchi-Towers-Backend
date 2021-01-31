@@ -2,8 +2,10 @@ package com.example.Tamagotchi_Towers.models.animals;
 
 import com.example.Tamagotchi_Towers.models.User;
 
+import javax.persistence.Entity;
 import java.util.ArrayList;
 
+@Entity
 public class Dragon extends Animal{
 
     private AnimalType animalType;
