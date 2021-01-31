@@ -51,4 +51,31 @@ public abstract class Animal {
 
     }
 
+    public String getAnimalName() {
+        return animalName;
+    }
+
+    public void setAnimalName(String animalName) {
+        this.animalName = animalName;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public int getHappiness() {
+        return happiness;
+    }
+
+    public int getCleanliness() {
+        return cleanliness;
+    }
+
+    public int getFitness() {
+        return fitness;
+    }
+
+    public int getHunger() {
+        return hunger;
+    }
 }
