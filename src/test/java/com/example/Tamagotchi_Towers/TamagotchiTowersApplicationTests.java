@@ -53,7 +53,10 @@ class TamagotchiTowersApplicationTests {
 	@Test
 	public void checkingAnimalTypeProperties(){
 		Animal animal = animalRepository.getOne(1L);
-		assertEquals(1.2, )
+		assertEquals(1.2, animal.getAppetite());
+		assertEquals(1.5, animal.getGrooming());
+		assertEquals(1, animal.getCheeriness());
+		assertEquals(1.75, animal.getActivityLevel());
 	}
 
 }
