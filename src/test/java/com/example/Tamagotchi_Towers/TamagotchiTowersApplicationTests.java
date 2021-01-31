@@ -2,6 +2,7 @@ package com.example.Tamagotchi_Towers;
 
 import com.example.Tamagotchi_Towers.models.User;
 import com.example.Tamagotchi_Towers.models.animals.Animal;
+import com.example.Tamagotchi_Towers.models.animals.AnimalType;
 import com.example.Tamagotchi_Towers.repositories.AnimalRepository;
 import com.example.Tamagotchi_Towers.repositories.UserRepository;
 import org.junit.jupiter.api.Test;
@@ -46,6 +47,7 @@ class TamagotchiTowersApplicationTests {
 		assertEquals(100, animal.getCleanliness());
 		assertEquals(100, animal.getFitness());
 		assertEquals(100, animal.getHunger());
+		assertEquals(AnimalType.DOG, animal.getAnimalType());
 //		List<User> foundUser = userRepository.findUserByAnimals(animal);
 //		assertEquals(foundUser, animal.getUser());
 	}
