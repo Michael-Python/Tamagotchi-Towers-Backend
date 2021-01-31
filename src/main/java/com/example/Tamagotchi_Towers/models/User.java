@@ -39,4 +39,31 @@ public class User {
 
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
+    }
+
+    public List<Animal> getAnimals() {
+        return animals;
+    }
+
+    public Long getId() {
+        return id;
+    }
 }
