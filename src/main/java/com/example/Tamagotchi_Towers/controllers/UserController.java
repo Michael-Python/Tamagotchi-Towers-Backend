@@ -16,8 +16,13 @@ public class UserController {
     UserRepository userRepository;
 
     @GetMapping(value = "/users")
-    public ResponseEntity<List<User>> getAllUsers(){
-        return new ResponseEntity<>(userRepository.findAll(), HttpStatus.OK);
+    public ResponseEntity<List<User>> getAllUsersWithFilter(
+            @RequestParam(name = "username", required = false) String username){
+        if (username != null) {
+            return new ResponseEntity<>(userRepository.findByUserName(username), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(userRepository.findAll(), HttpStatus.OK);
+        }
     }
 
     @GetMapping(value = "/users/{id}")

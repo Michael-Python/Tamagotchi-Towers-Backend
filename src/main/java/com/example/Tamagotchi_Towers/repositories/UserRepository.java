@@ -10,5 +10,5 @@ import java.util.List;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    List<User> findUserByAnimals(Animal animal);
+    List<User> findByUserName(String username);
 }
