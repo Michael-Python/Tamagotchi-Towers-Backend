@@ -10,9 +10,8 @@ public class Unicorn extends Animal{
 
     private ArrayList images;
 
-    public Unicorn(String animalName, int health, int happiness, int cleanliness,
-                   int fitness, int hunger, User user){
-        super(animalName, AnimalType.UNICORN, health, happiness, cleanliness, fitness, hunger, user);
+    public Unicorn(String animalName, User user){
+        super(animalName, AnimalType.UNICORN, 100, 100, 100, 100, 100, user);
         this.images = new ArrayList();
     }
 

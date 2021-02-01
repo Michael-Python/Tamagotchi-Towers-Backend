@@ -10,9 +10,8 @@ public class Penguin extends Animal{
 
     private ArrayList images;
 
-    public Penguin(String animalName, int health, int happiness, int cleanliness,
-                   int fitness, int hunger, User user){
-        super(animalName, AnimalType.PENGUIN, health, happiness, cleanliness, fitness, hunger, user);
+    public Penguin(String animalName, User user){
+        super(animalName, AnimalType.PENGUIN, 100, 100, 100, 100, 100, user);
         this.images = new ArrayList();
     }
 

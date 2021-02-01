@@ -10,9 +10,8 @@ public class Dragon extends Animal{
 
     private ArrayList images;
 
-    public Dragon(String animalName, int health, int happiness, int cleanliness,
-                  int fitness, int hunger, User user){
-        super(animalName, AnimalType.DRAGON, health, happiness, cleanliness, fitness, hunger, user);
+    public Dragon(String animalName, User user){
+        super(animalName, AnimalType.DRAGON, 100, 100, 100, 100, 100, user);
         this.images = new ArrayList();
     }
 
