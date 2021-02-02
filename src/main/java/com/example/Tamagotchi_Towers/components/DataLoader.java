@@ -24,19 +24,19 @@ public class DataLoader implements ApplicationRunner{
 
     public void run(ApplicationArguments args){
 
-        User stuart = new User("Stuart", "ILikePenguins7", "fakeImgUrl");
+        User stuart = new User("Stuart", "1", "fakeImgUrl");
         userRepository.save(stuart);
 
-        User andy = new User("Andy", "MusicIsLife", "fakeImgUrl");
+        User andy = new User("Andy", "2", "fakeImgUrl");
         userRepository.save(andy);
 
-        User emily = new User("Emily", "IHeartCartoons", "fakeImgUrl");
+        User emily = new User("Emily", "3", "fakeImgUrl");
         userRepository.save(emily);
 
-        User ruth = new User("Ruth", "AnimalGIFsAreGr8", "fakeImgUrl");
+        User ruth = new User("Ruth", "4", "fakeImgUrl");
         userRepository.save(ruth);
 
-        User michael = new User("Michael", "LoveLearning", "fakeImgUrl");
+        User michael = new User("Michael", "5", "fakeImgUrl");
         userRepository.save(michael);
 
         Animal toto = new Animal("Toto", AnimalType.DOG, michael);
@@ -44,10 +44,10 @@ public class DataLoader implements ApplicationRunner{
 
         Animal salem = new Animal("Salem", AnimalType.CAT, ruth);
         animalRepository.save(salem);
-        salem.addImageURL("./src/gifs/cat/cat_heart.gif");
-        salem.addImageURL("./src/gifs/cat/cat_meow.gif");
-        salem.addImageURL("./src/gifs/cat/cat_exclamation.gif");
-        salem.addImageURL("./src/gifs/cat/cat_rip.gif");
+        salem.addImageURL("catHeart");
+        salem.addImageURL("catMeow");
+        salem.addImageURL("catExclamation");
+        salem.addImageURL("catRIP");
         animalRepository.save(salem);
 
         Animal pingu = new Animal("Pingu", AnimalType.PENGUIN, stuart);
