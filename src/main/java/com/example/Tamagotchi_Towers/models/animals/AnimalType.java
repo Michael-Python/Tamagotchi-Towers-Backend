@@ -33,10 +33,10 @@ public enum AnimalType {
     private final String speak;
     private final String heart;
     private final String exclamation;
-    private final String RIP;
+    private final String rip;
 
     AnimalType(double appetite, double grooming, double cheeriness, double activityLevel,
-               String speak, String heart, String exclamation, String RIP){
+               String speak, String heart, String exclamation, String rip){
         this.appetite = appetite;
         this.grooming = grooming;
         this.cheeriness = cheeriness;
@@ -44,7 +44,7 @@ public enum AnimalType {
         this.speak = speak;
         this.heart = heart;
         this.exclamation = exclamation;
-        this.RIP = RIP;
+        this.rip = rip;
     }
 
     public double getAppetite() {
@@ -76,6 +76,6 @@ public enum AnimalType {
     }
 
     public String getRIP() {
-        return RIP;
+        return rip;
     }
 }
