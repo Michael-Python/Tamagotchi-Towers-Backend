@@ -41,9 +41,6 @@ public class Animal {
     @JsonIgnoreProperties({"animals"})
     private User user;
 
-    @Column
-    private ArrayList images;
-
     public Animal(String animalName, AnimalType animalType, User user){
         this.animalName = animalName;
         this.animalType = animalType;
@@ -53,15 +50,22 @@ public class Animal {
         this.fitness = 100;
         this.hunger = 100;
         this.user = user;
-        this.images = new ArrayList();
     }
 
     public Animal(){
 
     }
 
+    public Long getId() {
+        return id;
+    }
+
     public String getAnimalName() {
         return animalName;
+    }
+
+    public AnimalType getAnimalType() {
+        return animalType;
     }
 
     public void setAnimalName(String animalName) {
@@ -88,14 +92,6 @@ public class Animal {
         return hunger;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public AnimalType getAnimalType() {
-        return animalType;
-    }
-
     public double getAppetite(){
         return animalType.getAppetite();
     }
@@ -112,15 +108,18 @@ public class Animal {
         return animalType.getActivityLevel();
     }
 
-    public Long getId() {
-        return id;
+    public String getSpeak(){ return animalType.getSpeak(); }
+
+    public String getExclamation(){ return animalType.getExclamation(); }
+
+    public String getHeart(){ return animalType.getHeart(); }
+
+    public String getRIP(){ return animalType.getRIP(); }
+
+    public User getUser() {
+        return user;
     }
 
-    public ArrayList getImages() {
-        return images;
-    }
 
-    public void addImageURL(String url) {
-        this.images.add(url);
-    }
+
 }
