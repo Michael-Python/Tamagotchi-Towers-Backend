@@ -1,6 +1,8 @@
 package com.example.Tamagotchi_Towers.controllers;
 
+import com.example.Tamagotchi_Towers.models.User;
 import com.example.Tamagotchi_Towers.models.animals.Animal;
+import com.example.Tamagotchi_Towers.models.animals.AnimalType;
 import com.example.Tamagotchi_Towers.repositories.AnimalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,8 +18,18 @@ public class AnimalController {
     AnimalRepository animalRepository;
 
     @GetMapping(value = "/animals")
-    public ResponseEntity<List<Animal>> getAllAnimals(){
-        return new ResponseEntity<>(animalRepository.findAll(), HttpStatus.OK);
+    public ResponseEntity<List<Animal>> getAllAnimalsWithFilter(
+            @RequestParam(name = "animalname", required = false) String animalname,
+            @RequestParam(name = "animaltype", required = false) AnimalType animaltype){
+        if (animalname != null){
+            return new ResponseEntity<>(animalRepository.findAnimalByAnimalName(animalname), HttpStatus.OK);
+        }
+        if (animaltype != null){
+            return new ResponseEntity<>(animalRepository.findAnimalByAnimalType(animaltype), HttpStatus.OK);
+        }
+        else {
+            return new ResponseEntity<>(animalRepository.findAll(), HttpStatus.OK);
+        }
     }
 
     @GetMapping(value = "/animals/{id}")
@@ -25,9 +37,22 @@ public class AnimalController {
         return new ResponseEntity(animalRepository.findById(id), HttpStatus.OK);
     }
 
+    @GetMapping(value = "/animals/users")
+    public ResponseEntity<List<User>> findAnimalsForUsersNamedQuery(
+            @RequestParam(name = "username") String username){
+        return new ResponseEntity(animalRepository.findAnimalByUserUserName(username), HttpStatus.OK);
+    }
+
     @PostMapping(value = "/animals")
     public ResponseEntity<Animal> postAnimal(@RequestBody Animal animal){
         animalRepository.save(animal);
         return new ResponseEntity<>(animal, HttpStatus.CREATED);
+    }
+
+    @DeleteMapping(value = "/animals/{id}")
+    public ResponseEntity<Animal> deleteAnimal(@PathVariable Long id){
+        Animal found = animalRepository.getOne(id);
+        animalRepository.delete(found);
+        return new ResponseEntity(animalRepository.findAll(), HttpStatus.OK);
     }
 }

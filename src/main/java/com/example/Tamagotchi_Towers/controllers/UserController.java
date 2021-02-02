@@ -1,6 +1,7 @@
 package com.example.Tamagotchi_Towers.controllers;
 
 import com.example.Tamagotchi_Towers.models.User;
+import com.example.Tamagotchi_Towers.models.animals.Animal;
 import com.example.Tamagotchi_Towers.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -34,5 +35,12 @@ public class UserController {
     public ResponseEntity<User> postUser(@RequestBody User user){
         userRepository.save(user);
         return new ResponseEntity<>(user, HttpStatus.CREATED);
+    }
+
+    @DeleteMapping(value = "/users/{id}")
+    public ResponseEntity<User> deleteAnimal(@PathVariable Long id) {
+        User found = userRepository.getOne(id);
+        userRepository.delete(found);
+        return new ResponseEntity(userRepository.findAll(), HttpStatus.OK);
     }
 }

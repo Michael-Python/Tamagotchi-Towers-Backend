@@ -39,19 +39,19 @@ public class DataLoader implements ApplicationRunner{
         User michael = new User("Michael", "LoveLearning", "fakeImgUrl");
         userRepository.save(michael);
 
-        Dog toto = new Dog("Toto", michael);
+        Animal toto = new Animal("Toto", AnimalType.DOG, michael);
         animalRepository.save(toto);
 
-        Cat salem = new Cat("Salem", ruth);
+        Animal salem = new Animal("Salem", AnimalType.CAT, ruth);
         animalRepository.save(salem);
 
-        Penguin pingu = new Penguin("Pingu", stuart);
+        Animal pingu = new Animal("Pingu", AnimalType.PENGUIN, stuart);
         animalRepository.save(pingu);
 
-        Dragon smaug = new Dragon("Smaug", emily);
+        Animal smaug = new Animal("Smaug", AnimalType.DRAGON, emily);
         animalRepository.save(smaug);
 
-        Unicorn charlie = new Unicorn("Charlie", andy);
+        Animal charlie = new Animal("Charlie", AnimalType.UNICORN, andy);
         animalRepository.save(charlie);
     }
 }

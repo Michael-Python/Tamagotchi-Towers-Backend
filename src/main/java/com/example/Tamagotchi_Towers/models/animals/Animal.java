@@ -4,9 +4,10 @@ import com.example.Tamagotchi_Towers.models.User;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+//@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @Table(name = "animals")
 public class Animal {
 
@@ -40,16 +41,19 @@ public class Animal {
     @JsonIgnoreProperties({"animals"})
     private User user;
 
-    public Animal(String animalName, AnimalType animalType, int health, int happiness, int cleanliness,
-                  int fitness, int hunger, User user){
+    @Column
+    private ArrayList images;
+
+    public Animal(String animalName, AnimalType animalType, User user){
         this.animalName = animalName;
         this.animalType = animalType;
-        this.health = health;
-        this.happiness = happiness;
-        this.cleanliness = cleanliness;
-        this.fitness = fitness;
-        this.hunger = hunger;
+        this.health = 100;
+        this.happiness = 100;
+        this.cleanliness = 100;
+        this.fitness = 100;
+        this.hunger = 100;
         this.user = user;
+        this.images = new ArrayList();
     }
 
     public Animal(){
@@ -106,5 +110,17 @@ public class Animal {
 
     public double getActivityLevel(){
         return animalType.getActivityLevel();
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public ArrayList getImages() {
+        return images;
+    }
+
+    public void setImages(ArrayList images) {
+        this.images = images;
     }
 }
