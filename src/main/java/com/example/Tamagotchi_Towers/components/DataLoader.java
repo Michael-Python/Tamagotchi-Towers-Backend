@@ -44,6 +44,11 @@ public class DataLoader implements ApplicationRunner{
 
         Animal salem = new Animal("Salem", AnimalType.CAT, ruth);
         animalRepository.save(salem);
+        salem.addImageURL("./src/gifs/cat/cat_heart.gif");
+        salem.addImageURL("./src/gifs/cat/cat_meow.gif");
+        salem.addImageURL("./src/gifs/cat/cat_exclamation.gif");
+        salem.addImageURL("./src/gifs/cat/cat_rip.gif");
+        animalRepository.save(salem);
 
         Animal pingu = new Animal("Pingu", AnimalType.PENGUIN, stuart);
         animalRepository.save(pingu);

@@ -120,7 +120,7 @@ public class Animal {
         return images;
     }
 
-    public void setImages(ArrayList images) {
-        this.images = images;
+    public void addImageURL(String url) {
+        this.images.add(url);
     }
 }
