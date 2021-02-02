@@ -44,10 +44,10 @@ public class DataLoader implements ApplicationRunner{
 
         Animal salem = new Animal("Salem", AnimalType.CAT, ruth);
         animalRepository.save(salem);
-        salem.addImageURL("catHeart");
-        salem.addImageURL("catMeow");
-        salem.addImageURL("catExclamation");
-        salem.addImageURL("catRIP");
+        salem.addImageURL("https://imgur.com/7depz89");
+        salem.addImageURL("https://imgur.com/rePMEXg");
+        salem.addImageURL("https://imgur.com/KliwVC0");
+        salem.addImageURL("https://imgur.com/HPAgpFV");
         animalRepository.save(salem);
 
         Animal pingu = new Animal("Pingu", AnimalType.PENGUIN, stuart);
