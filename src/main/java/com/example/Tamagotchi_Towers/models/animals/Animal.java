@@ -64,33 +64,45 @@ public class Animal {
         return animalName;
     }
 
+    public void setAnimalName(String animalName) {
+        this.animalName = animalName;
+    }
+
     public AnimalType getAnimalType() {
         return animalType;
     }
 
-    public void setAnimalName(String animalName) {
-        this.animalName = animalName;
-    }
+    public void setAnimalType(AnimalType animalType) { this.animalType = animalType; }
 
     public int getHealth() {
         return health;
     }
 
+    public void setHealth(int health) { this.health = health; }
+
     public int getHappiness() {
         return happiness;
     }
+
+    public void setHappiness(int happiness) { this.happiness = happiness; }
 
     public int getCleanliness() {
         return cleanliness;
     }
 
+    public void setCleanliness(int cleanliness) { this.cleanliness = cleanliness; }
+
     public int getFitness() {
         return fitness;
     }
 
+    public void setFitness(int fitness) { this.fitness = fitness; }
+
     public int getHunger() {
         return hunger;
     }
+
+    public void setHunger(int hunger) { this.hunger = hunger; }
 
     public double getAppetite(){
         return animalType.getAppetite();

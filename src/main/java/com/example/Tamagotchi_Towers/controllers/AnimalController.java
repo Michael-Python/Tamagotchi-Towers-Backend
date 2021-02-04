@@ -32,15 +32,15 @@ public class AnimalController {
         }
     }
 
-    @GetMapping(value = "/animals/{id}")
-    public ResponseEntity getAnimal(@PathVariable Long id){
-        return new ResponseEntity(animalRepository.findById(id), HttpStatus.OK);
-    }
-
     @GetMapping(value = "/animals/users")
     public ResponseEntity<List<User>> findAnimalsForUsersNamedQuery(
             @RequestParam(name = "username") String username){
         return new ResponseEntity(animalRepository.findAnimalByUserUserName(username), HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/animals/{id}")
+    public ResponseEntity getAnimal(@PathVariable Long id){
+        return new ResponseEntity(animalRepository.findById(id), HttpStatus.OK);
     }
 
     @PostMapping(value = "/animals")
@@ -54,5 +54,19 @@ public class AnimalController {
         Animal found = animalRepository.getOne(id);
         animalRepository.delete(found);
         return new ResponseEntity(animalRepository.findAll(), HttpStatus.OK);
+    }
+
+    @PutMapping(value="/animals/{id}")
+    public ResponseEntity<Animal> putAnimal(@RequestBody Animal animal, @PathVariable Long id){
+        Animal animalToUpdate = animalRepository.findById(id).get();
+        animalToUpdate.setAnimalName(animal.getAnimalName());
+        animalToUpdate.setAnimalType(animal.getAnimalType());
+        animalToUpdate.setHealth(animal.getHealth());
+        animalToUpdate.setHappiness(animal.getHappiness());
+        animalToUpdate.setCleanliness(animal.getCleanliness());
+        animalToUpdate.setFitness(animal.getFitness());
+        animalToUpdate.setHunger(animal.getHunger());
+        animalRepository.save(animalToUpdate);
+        return new ResponseEntity<>(animalToUpdate, HttpStatus.OK);
     }
 }
